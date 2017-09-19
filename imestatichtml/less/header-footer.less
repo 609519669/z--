@@ -1,0 +1,413 @@
+//-------------------------------------scaffolding.less包含了所有的less变量，混合，框架容器大小
+@import "scaffolding.less";
+
+
+//-----------------------------------------------------------------------------------------------#导航头部分
+#header{
+  //border:1px solid red;
+  cursor:default;
+  position: fixed;
+  z-index: 10000;
+  box-shadow:0 2px 4px rgba(0,0,0,.175);
+  top: 0;
+  background-color: white;
+  font-size: 16px;//13.35px;
+  width:@maxw;
+  height:@headerh;
+  color: black;
+   div:not(.ct){
+    height:100%;
+    float:left;
+  }
+
+//------------------------------导航
+  div.nav{
+    .perw(980,@ct);
+   // .perw(1033,@ct);
+    >ul{
+      //border: 1px solid red;
+      position:relative;
+       height: 100%;
+       width:100%;
+       background-image: url("../images/brand.png");
+      // background-size:180px;
+      // background-size:200px;
+       background-repeat: no-repeat;
+       background-position: left 16px;
+
+       > li+li{
+        //padding-left: 63px;
+       }
+
+       >li{
+         //border: 1px solid red;
+         font-size: 17px;
+          padding-top:5px;
+          //padding-left:63px;
+          padding: 5px 30px 0;
+          line-height: @headerh;
+          float: right;
+          &:hover{
+            color:rgba(255,0,0,.6);
+            >a{
+             color:rgba(255,0,0,.6);
+            }
+          };
+          span.caret{
+            margin-top: -2px;
+          }
+          a{
+            color: black;
+          }
+          &.current{
+            //font-size: 30px;
+            color: red;
+            >a{
+              color: red;
+            }
+          }
+
+          ul{
+            display:none;
+            min-width: 140px;
+            position: absolute;
+            top: 104%;
+            margin: 0;
+            padding: 0;
+            //padding-right: 81px;
+            list-style: none;
+            background-color: white;
+            border: 1px solid rgba(0,0,0,.15);
+            box-shadow: 0 6px 12px rgba(0,0,0,.175);
+            border-radius: 4px;
+            color: black;
+            font-size:16px;
+            li{
+               box-sizing:content-box;
+              line-height: 100%;
+              //padding-left:63px;
+              margin:4px 0;
+              padding:5px 20px;
+              &:hover{
+                //background-color: rgba(0,0,255,.08);
+                background-color: #f5f5f5;
+              };
+              a{
+                color: black;
+              }
+
+            }
+          }
+
+       }
+
+    }
+
+
+  }
+//----------------------------------登陆，注册
+  div.signin{
+    //border: 1px solid red;
+    .perw(137,@ct);
+   text-align: right;
+   > div+div{
+    //margin-left: 30px;
+   }
+   >div{
+    position: relative;
+    height: 28px;
+    color: @red;
+   // background-color: red;
+    display: inline-block;
+    float: right;
+    //line-height: 0;
+    border-radius: 2px;
+    margin-top: 32px;
+    padding: 4px 6px;
+    border: 1px solid @blue;
+        a{
+          color: black;
+        }
+
+        &:hover{
+        background-color: rgb(0,103,220);
+        a{
+          color: white;
+        }
+      };
+    &:last-child{
+      //background-color:@blue;
+      //border: 1px solid black;
+      margin-right: 14px;
+      color:black;
+      /* &:hover{
+        background-color: rgb(0,103,220);
+        a{
+          color: white;
+        }
+      }; */
+
+    };
+    div.login{
+      //display: none;
+    }
+    div.register{
+      //display: none;
+      div.forgot{
+        display:block;
+        width: 100%;
+        padding-right: 4px;
+        margin-top: 12px;
+        color: rgba(255,255,255,.7);
+        letter-spacing: 2px;
+        text-align: right;
+        font-size: 12px;
+        height: 25px;
+        //border: 1px solid red;
+        &:hover{
+          cursor: pointer;
+          color: @yello
+        };
+        span{
+           font-size: 10px;
+        }
+      }
+    }
+    div.pannel{
+      position: relative;
+      display: none;
+      border: 1px solid #ccc ;
+      box-shadow: 0 2px 2px rgba(0,0,0,.175);
+      z-index: -1;
+      border-radius: 2px;
+      right: 0;
+      top: 51px;
+      position:absolute;
+      width: 274px;
+      height:280px;
+      //height:263px;
+      //background: rgba(0,0,0,.8);
+
+      &:after{
+        z-index: -100;
+        position: absolute;
+        left: 0;
+        top: 0;
+       // background-image: url("../images/footer/back.png");
+        //filter: blur(7px);
+        background-color:@blue;
+        content: "";
+        width: 100%;
+        height: 100%;
+        opacity: 0.7;
+      };
+      div.container{
+        display: block;
+        width: 230px;
+        margin:0 20px;
+        //background-color: red;
+        div.logo{
+          //border: 1px solid red;
+          width: 100%;
+          height: 50px;
+          background-image: url("../images/brand.png");
+          background-position: center center;
+          background-size: 100px 30px;
+          background-repeat: no-repeat;
+          margin-top: 10px;
+        }
+        form{
+          //border: 1px solid red;
+          fieldset{
+            border: 1px solid red;
+            padding: 0;
+            text-align: center;
+            border:none;
+           //border-top:solid #ccc 1px;
+            border: 1px solid transparent;
+            border-top:1px solid #ccc ;
+            legend{
+              text-align: center;
+              margin: auto;
+              color: white;
+              font-size: 14px;
+              padding: 10px 20px;
+            }
+
+            span#login_info{
+              height: auto !important;
+            }
+
+           input +input{
+            margin-top: 10px;
+           }
+           input{
+            z-index: 100;
+            padding-left: 6px;
+            border: 1px solid #ccc;
+            font-size: 15px;
+            line-height: 1.428;
+            border-radius: 4px;
+            color: #555;
+            width: 100%;
+            height: 34px;
+            &:focus{
+              -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+              box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+            }
+            &.last{
+              color: white;
+              font-size: 16px;
+              letter-spacing: 4px;
+              background-color: transparent;
+              &:hover{
+                //color: black;
+                background-color:rgba(185,185,185,.3);
+
+              }
+            }
+
+           }
+          }
+        }
+        div.forgot{
+          a{
+            color: white;
+            &:hover{
+              opacity: .68;
+            };
+          }
+        }
+
+      }
+
+
+   }
+   }
+
+  }
+}
+
+
+
+//-----------------------------------------------------------------------------------------------所有页面底部
+//-----------------------------------------------------------------------------------------------官网连接
+#links{
+  background-color: @blue;
+  //background-image: url("../images/footer/back.png");//必须让它repeat
+  height: 296px;
+  div.middle{
+    margin: 0 auto;
+    //border: 1px solid red;
+    //width: 990px;
+    height: 100%;
+    .item+.item{
+      .perm(95.3,990);
+    }
+    .item{
+      color: white;
+      margin: 50px 0px;
+      float: left;
+      //border: 1px solid red;
+      h3{
+        //opacity:.8;
+        margin: 0 0;
+        margin-bottom: 12px;
+        padding-bottom: 9px;
+        border-bottom: 1px solid @white-ray;
+        color: rgba(255,255,255,.9);
+      }
+      ul{
+        margin: 0;
+        padding: 0;
+        margin-top: 20px;
+        li{
+          //border: 1px solid red;
+          margin-bottom: 14px;
+          color: @white-ray;
+          a{
+            &:hover{
+              text-decoration: underline;
+            };
+            color: rgba(255, 255, 255, 0.5);
+          }
+        }
+      }
+      &.last-link{
+        //float: right;
+        .container{
+          //border: 1px solid red;
+          width: 190px;
+          >div{
+            float: left;
+          }
+          div.icon{
+            //margin-left: -10px;
+            //border: 1px solid red;
+            width: 50px;
+            a+a{
+              margin-top:8px;
+            }
+            a{
+              color: white;
+              display: inline-block;
+               i{
+                 font-size: 36px;
+                 opacity: .7;
+                 &:hover{
+                  opacity: 1;
+                 }
+            }
+            }
+
+          }
+          div.weixin-image{
+              //border: 1px solid red;
+              float: right;
+              width: 100px;
+              img{
+                margin-left: 12px;
+              }
+              img{
+                  //.perw(108,250);
+                  width: 120px;
+                  opacity: .7;
+
+              display: block;
+              float:right;
+              }
+
+
+            }
+
+        }
+      }
+    }
+  }
+}
+
+//-----------------------------------------------------------------------------------------------footer
+#footer{
+   background-color: @blue;
+   border-top: 2px solid rgba(255,255,255,.3);
+   //background-color: rgb(0,94,164);
+  //background-color: rgb(23,61,98);
+  height:50px;
+  font-size: 12.65px;
+  //color: rgba(255,255,255,.4);
+  color: @white-footeray;
+  //letter-spacing: 1px;
+ div.container{
+  //width: 990px;
+  margin: 0 auto;
+  span{
+    display: block;
+    width: 50%;
+    float: left;
+    margin-top: 5px;
+  }
+  span.right{
+    text-align: right;
+  }
+ }
+}

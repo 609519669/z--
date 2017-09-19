@@ -1,0 +1,96 @@
+*{box-sizing:border-box;}
+#container{
+    position:absolute;
+    left:50%;
+    padding-top: 10px;
+    margin-left: -500px;
+    color: rgb(102, 102, 102);
+    font-size:13px ;
+    line-height: 26px;
+    font-family: PingFangSC-Light, 'helvetica neue', 'hiragino sans gb', arial, 'microsoft yahei ui', 'microsoft yahei', simsun, sans-serif;
+    a{color:black;text-decoration: none;}
+    ul,li,h3,h2,p,div{margin:0;padding:0;list-style-type: none;}
+    div.left{
+       a{
+         color:#4078c0;
+         &:hover{
+            border-bottom: 1px solid #4078c0;
+         };
+         &:focus{
+            color: black;
+         }
+         span{
+            padding-right: 5px;
+         }
+       }
+        position: fixed;
+        font-size: 14px;
+         text-align: left;
+         //padding-right: 20px;
+        div.logo{
+
+            img{
+                width: 120px;
+            }
+        }
+        float: left;
+        //border: 1px solid red;
+        width:200px;
+    }
+    div.right{
+        margin-left: 220px;
+        //padding-left:20px;
+        float: left;
+        //border: 1px solid red;
+        width:800px;
+
+        div.header{
+            //position: fixed;
+            font-size: 16px;
+            width: 800px;
+            background-color:rgb(10,132,213);
+            color: white;
+            padding: 5px;
+        }
+        div.content{
+            //padding-top: 40px;
+            padding-left:20px;
+            border-left:1px solid rgba(10,132,213,.6);
+            >ul{
+                >li{
+                    margin-bottom:35px;
+                    >h2{
+                        color: #000;
+                        font-size: 16px;
+                        line-height:24px;
+                        margin-top:18px;
+                        margin-bottom:16px;
+                    }
+                    >ul{
+                        >li{
+                            >strong{
+                                //font-weight:500;
+                                display: block;
+                                color:rgba(0,0,0,.6);
+                                letter-spacing: 1px;
+                                font-size:15px;
+                                line-height: 2;
+                                margin-top: 17px;
+                                margin-bottom: 14px;
+
+                            }
+                            >p{
+                                font-size: 14px;
+                                padding-left: 28px;
+                                margin-top: 0;
+                                margin-bottom:3px;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+}

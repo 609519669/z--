@@ -1,0 +1,860 @@
+@import "scaffolding.less";
+//-----------------------------------------------------------------------------------------------#导航头部分引入header-footer.css
+
+
+//-----------------------------------------------------------------------------------------------#轮播，banner图
+#banner{
+//----------------------------------banner背景图
+position: relative;
+background-color: white;
+background-repeat: no-repeat;
+width: @maxw;
+height:@bannerh;
+img{
+  width: @maxw;
+}
+//----------------------------------红色文字框
+div.banners{
+  //border: 1px solid red;
+  width: 100%;
+  height: 400px;
+  position: relative;
+
+  img{
+    width: 100%;
+    position: absolute;
+  }
+  div.controls{
+    z-index: 101;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 3px;
+    text-align: center;
+    span+span{
+            margin-left: 10px;
+    }
+    span{
+      display: inline-block;
+      width: 18px;
+      height: 4px;
+      background-color:rgb(255,255,255);
+      opacity: .4;
+      &.current{
+        opacity:1;
+      }
+    }
+  }
+}
+
+div.description{
+  background-color: @red-opacity;
+  position: absolute;
+  left: 133px;
+  top: 122px;
+  z-index: 100;
+  padding: 27px;
+  color: white;
+
+  width: 484px;
+  height: 210px;
+  h3{
+    margin: 0;
+    padding: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid white;
+    border-color: rgba(255,255,255,0.5);
+    font-size: 22px;
+    font-weight: lighter;
+  }
+  p{
+    font-size: 16.16px;
+    line-height: 180%;
+
+  }
+}
+//----------------------------------边栏三个div框
+div.sidebar{
+  //border:1px solid red;
+  z-index: 100000;
+  position: fixed;
+  bottom: 40%;
+  right: 10px;
+  width: 46px;
+  height: 195px;
+  div.icon+div.icon{
+    margin-top: 5px;
+  }
+  div.icon{
+    width: 44px;
+    height: 44px;
+    display: block;
+    float: left;
+    background-color:#ffff66;
+     //background-color:rgba(255,153,0,.8);
+    background-color: #00ccff;
+    background-repeat: no-repeat;
+    background-position: center center;
+    //border: 1px solid #006666;
+    &.phone{
+      background-image: url("../images/sidebar/1.png");
+    }
+    &.trial{
+      >a{
+        display: block;
+        //border: 1px solid red;
+        height: 100%;
+      }
+      a{
+        color: black;
+      }
+      background-image: url("../images/sidebar/2.png");
+    }
+    &.weixin{
+      background-image: url("../images/sidebar/3.png");
+    }
+    &.qq{
+      background-image: url("../images/sidebar/qq.png");
+      background-size: 33px;
+      //background-color: #00ccff;
+      >a{
+        display: block;
+        //border: 1px solid red;
+        height: 100%;
+
+      }
+    }
+
+    div.tooltip{
+    font-size: 14px;
+    display: inline-block;
+    position: absolute;
+    color: rgba(0,0,0,.6);
+    top: 0;
+    right: 55px;
+    background-color: white;
+    border: 1px solid rgba(0,0,0,.25);
+    border-radius: 3px;
+    padding: 4px 14px;
+    &.for-phone{
+      display: none;
+      width: 200px;
+      line-height: 35px;
+      div.tooltip-arrow{
+        top: 50%;
+      }
+    }
+
+    &.for-trial{
+      display: none;
+      width: 190px;
+      height: 46px;
+      top: 100px;
+      bottom: 0;
+      line-height: 35px;
+      div.tooltip-arrow{
+        top: 50%;
+      }
+    }
+
+       &.for-qq{
+      display: none;
+      width: 190px;
+      height: 46px;
+      top: 145px;
+      bottom: 0;
+      line-height: 35px;
+      div.tooltip-arrow{
+        top: 50%;
+      }
+    }
+
+    &.for-weixin{
+      display: none;
+      width: 120px;
+      height: 140px;
+      line-height: 35px;
+      padding: 3px 3px;
+      text-align: center;
+      div.tooltip-arrow{
+        top: 50%;
+      }
+      img{
+        //border: 1px solid red;
+        width: 100%;
+      }
+      span{
+        display: block;
+        background-color: transparent;
+        margin-top: -3px;
+        width: 100%;
+        font-size: 10px;
+        line-height: 20px;
+        padding:0;
+      }
+    }
+
+    div.tooltip-arrow{
+      display: inline-block;
+      position: absolute;
+      left: 100%;
+
+      margin-top: -9px;
+      width: 0;
+      height: 0;
+      margin-left: 0px;
+      vertical-align: middle;
+      border-right-width:0px;
+      border-color: transparent;
+      border-left-color: rgba(0,0,0,.25);
+      border-width: 9px;
+      border-style: solid;
+      &:after{
+        position: absolute;
+        content: " ";
+        right: -7px;
+        top: -8px;
+        width: 0;
+        height: 0;
+        margin-left: 0px;
+        vertical-align: middle;
+        border-right-width:0px;
+        border-color: transparent;
+        border-left-color: white;
+        border-width: 8px;
+        border-style: solid;
+
+
+      };
+    }
+  }
+  }
+
+}
+}
+
+//-----------------------------------------------------------------------------------------------#News新闻动态
+
+
+//----------------------------------新闻区域（所有区域标记通用）
+  div.title{
+    //border: 1px solid red;
+    position: relative;
+    margin: 48px auto 74px;
+    text-align: center;
+    color: @ray;
+    border-bottom: 5px solid @ray;
+    width: 214px;
+    height: 62px;
+    //height: 72px;
+  span{
+    //border: 1px solid red;
+
+    font-size: 24px;
+    display:block;
+    &.english{
+      margin-bottom: 3px;
+    }
+    &:nth-last-of-type(1){
+      color:black;
+      font-size: 26.7px;
+      font-weight: bold;
+    };
+    }
+   div{
+    position: absolute;
+    width: 51px;
+    height: 9px;
+    background-color:@red;
+    left:81px;
+    bottom: -6px;
+   }
+ }
+
+#news{
+  background-color: white;
+  width:@maxw;
+  height: @newsh;
+
+
+ //----------------------------------新闻项
+
+div.news-item{
+ //border: 1px solid red;
+  float: left;
+  .perw(558,@ct);
+  //width: 558px;
+  height: 123px;
+  margin-bottom: 61px;
+
+&.even{
+  padding-left: 6.9%;
+   // padding-left: 80px;
+}
+  >div{
+    float:left;
+  }
+//---------------每个新闻项分为左中右3个区域
+//---------------左侧
+  .left{
+    //border: 1px solid red;
+    position: relative;
+    //background-color: red;
+    width: 68px;
+    height: 100%;
+    background-repeat: no-repeat;
+    //background-image: url("../images/photo.png");
+     background-position: bottom center;
+     i.iconfont{
+      //color: @ray;
+      color: rgba(0,0,0,.15);
+      font-size: 42px;
+      position: absolute;
+      bottom: 0;
+      left: 19%;
+     }
+    span{
+      color: @ray;
+      padding: 0px;
+      display: block;
+      text-align: center;
+      &:first-child{
+        color: @red;
+        margin-top: -10px;
+        font-size: 52.7px;
+      }
+      &:nth-last-of-type(1){
+        font-size: 14px;
+        margin-top: -5px;
+      }
+    }
+  }
+
+  //---------------中侧
+div.middle{
+  width: 114px;
+  height: 123px;
+  //background-color: red;
+}
+  //------------------右侧
+  div.right{
+    //border: 1px solid red;
+    color: @ray;
+    font-size: 14.05px;
+     //background-color: green;
+    width: 295px;
+    height: 100%;
+    padding-left: 11px;
+    padding-top: 9px;
+      //------------------右侧的上半部分
+    div.up{
+     // border: 1px solid red;
+     font-size: 15px;
+      padding-bottom: 10px;
+    a{
+      color: @red;
+    }
+    span{
+      font-size: 13px;
+      color: @red;
+    }
+    }
+    //------------------右侧的下半部分
+    div.down{
+      border-top: 1px solid @ray;
+      padding-top: 14px;
+      span.description{
+        color: black;
+        font-size: 15px;
+       font-weight: 600;
+       letter-spacing: 0.5px;
+        display: block;
+      }
+      p{
+        font-size: 14px;
+        line-height: 150%;
+      }
+    }
+  }
+}
+  }
+
+//-----------------------------------------------------------------------------------------------#Solutionn解决方案
+#solution{
+  //border: 1px solid red;
+  z-index: 1;
+  position: relative;
+  width:@maxw;
+  height: @solutionh;
+  position: relative;
+  //background-image: url("../images/solution-back.jpg");
+  background-repeat: no-repeat;
+  color: white;
+  &:after{
+    position: absolute;
+    content: " ";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: @blue;
+    background-repeat: no-repeat;
+    z-index: -2;
+  };
+  //------------------解决方案区域标题特殊项
+  div.title{
+    color: white;
+    border-bottom: 5px solid white;
+    span:nth-last-of-type(1){
+      color: white;
+    }
+  }
+
+
+  div.items{
+    //border: 1px solid red;
+    width: 100%;
+    //height: 250px;
+    height: 273px;
+    //-- ----------------------------解决方案项-->
+  div.solution-item+div.solution-item{
+      margin-left:16px;
+    }
+  div.solution-item{
+    //border: 1px solid red;
+    //border-bottom: 1px solid @yellow;
+    .perw(267,@ct);
+    height: 100%;
+    float: left;
+      a{
+        color: white;
+      }
+      div.mask{
+        //border: 1px solid red;
+        position: relative;
+        width: 100%;
+        height:203px;
+        overflow: hidden;
+        img{
+          transition: width 3s;
+          position: relative;
+          z-index: 0;
+         }
+        i{
+        transition: opacity 0.6s;
+         position: absolute;
+         color: white;
+          z-index: 2;
+          font-size: 40px;
+          text-align: center;
+          left: 0;
+          right: 0;
+          line-height: 203px;
+          opacity: 0;
+        }
+         &:hover{
+          i{
+            z-index:3;
+            opacity:1;
+            top: 0;
+          }
+          &:before{
+            background-color:@commom;
+            opacity: 0.9;
+          };
+          img{
+            left: -13px;
+            top: -10px;
+            width: 110%;
+          }
+         }
+         &:before{
+          transition: background-color 0.6s;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          position: absolute;
+          content: " ";
+          width: 100%;
+          height: 100%;
+         }
+      }
+
+
+
+
+    h3{
+    padding-left: 0;
+    width: 100%;
+    margin-top: 17px;
+  }
+    p{
+      //border: 1px solid red;
+      padding-left: 2px;
+      padding-bottom: 11px;
+      line-height: 150%;
+      border-bottom: 1px solid @yellow;
+      position: relative;
+      margin-top: -10px;
+     font-size: 12px;
+     span{
+      position: absolute;
+      right: 3px;
+     }
+  }
+  }
+}
+//-- ----------------------------了解更多链接按钮-->
+    a.getmore{
+      //position: absolute;
+      display:block;
+      font-size: 18.97px;
+      color: white;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-align: center;
+      margin: 82px auto;
+      width: 202px;
+      height: 50px;
+      line-height: 50px;
+      border: 1px solid white;
+      border-radius: 3px;
+      &:hover{
+        background-color: @commom;
+        color: black;
+        cursor:auto;
+      };
+      //background-color: red;
+  }
+}
+
+//-----------------------------------------------------------------------------------------------产品优势
+#advantage{
+   //border: 1px solid red;
+   width: @maxw;
+   height:@producth;
+   background-color:rgba(0,0,255,.008);
+   border-bottom:1px solid rgba(0,0,255,.03);
+   //产品优势头区域特殊设置
+   div.title{
+    margin-top: 58px;
+   }
+  //分为左右两个big半区
+  div.big{
+   // border: 1px solid red;
+    height: 380px;
+    width: 50%;
+    float: left;
+    div.left{
+      text-align: right;
+    }
+  }
+    //每个区域的item项
+  div.item{
+    //border: 1px solid red;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 35px;
+    >div{
+      float: left;
+    }
+        //每个item项一边是描述
+   div.description{
+    //border: 1px solid red;
+    width: 456px;
+    font-size: 14.05px;
+    h3{
+      font-size: 18.27px;
+      margin: 0px;
+    }
+    p{
+      font-size: 14.5px;
+      line-height: 150%;
+      color: @ray;
+    }
+   }
+   //每个item项一边是icon
+  div.icon{
+      //border: 1px solid red;
+      width:100px;
+      height: 80px;
+      i.iconfont{
+        text-align: center;
+        display: block;
+        font-size: 40px;
+        width: 56px;
+        height: 56px;
+        margin: 0px auto;
+        border: 1px solid @blue;
+        //padding: 8px;
+        padding-top: 4px;
+        border-radius: 28px;
+        color: @blue;
+      }
+    }
+  }
+}
+
+//-----------------------------------------------------------------------------------------------售前团队
+#sale{
+  //border: 1px solid red;
+  background-color: white;
+  width: @maxw;
+  height: @saleh;
+  div.title{
+    margin-top: 58px;
+    margin-bottom: 85px;
+    //margin-bottom: 52px;
+  }
+  div.circle{
+    //background-color: red;
+    //border: 1px solid red;
+    height: 24px;
+    span{
+      float: right;
+      display:block ;
+      margin-left: 10px;
+      width: 22px;
+      height: 22px;
+      //border: 1px solid red;
+      background-color: rgba(0,0,0,.1);
+      border-radius: 14px;
+      &.current{
+        background-color: @red;
+      }
+    }
+  }
+  div.pannel-container{
+    //border: 1px solid red;
+    width: 100%;
+    height: 350px;
+    margin-top: 16px;
+
+    div.pannel-item{
+      position: relative;
+      border: 1px solid @ray;
+      float: left;
+      .perw(269,@ct);
+      //width: 269px;
+      color: @ray;
+      margin-left:13px;
+      *{
+        position: relative;
+      }
+      &:before{
+       position: absolute;
+       top:0;
+       left: 0;
+       content: "";
+       width:100%;
+       height: 100%;
+   };
+
+
+      &.first{
+      margin-left:0px;
+    };
+
+    img{
+     //border: 1px solid red;
+      width: 100%;
+      height:160px;
+    }
+
+      div.name{
+       //border: 1px solid red;
+       color: black;
+        font-size: 24.59px;
+        margin: 20px 15px 10px;
+      }
+      div.job{
+        position: relative;
+        padding-bottom: 9px;
+         border-bottom: 1px solid @ray;
+        font-size: 16.86px;
+        margin: 0 15px 0;
+        i.iconfont{
+          position: relative;
+          display: inline-block;
+          margin-left: 1px;
+          margin-right: 4px;
+         top: -1.8px;
+         color: @ray;
+          font-size: 15px;
+          //width: 19px;
+          height:15px;
+        }
+
+        span.right{
+          position: absolute;
+          right: 3px;
+        }
+      }
+      p{
+        //border: 1px solid red;
+        background-color: transparent;
+        font-size: 16px;
+        margin-left: 15px;
+        margin-right: 15px;
+        line-height: 170%;
+      }
+
+        &:hover{
+            box-shadow: 2px 2px 8px #2086ee;
+            margin-top: -1px;
+             &:before{
+              //background-color:@commom;
+
+              //opacity: .08;
+             };
+
+            p{
+              color:black;
+            }
+            div.job{
+              color: black;
+              border-bottom: 1px solid black;
+              i.iconfont{
+                color: black;
+              }
+            }
+
+      };
+    }
+  }
+}
+
+//-----------------------------------------------------------------------------------------------我们的承诺
+#service{
+  position: relative;
+  //background-color: white;
+  width: @maxw;
+  height: @serviceh;
+  margin-bottom: 50px;
+  color: black;
+  //background: url("../images/service/back.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  z-index: -2;
+  &:after{
+    position: absolute;
+    left: 0;
+    top:0;
+    content: " ";
+    width: 100%;
+    height: 100%;
+    background-color:rgba(255,255,255,.88);
+     //background-color:@commom;
+    z-index: -2;
+    opacity: .06;
+  };
+  h3{
+    text-align: center;
+    font-size: 26.7px;
+    margin-top: 76px;
+  }
+  div.service-container{
+    border-top: 1px solid @blue;
+    border-bottom: 1px solid @blue;
+    height: 195px;
+    div.item+div.item{
+      margin-left: 78px;
+    }
+
+    div.item{
+      //border: 1px solid red;
+      float: left;
+      height: 100%;
+      //width: 25%;
+      >div{
+        float: left;
+      }
+      div.left{
+
+        //background-image: url("../images/service/sixsides.png");
+        position: relative;
+
+        //background-repeat: no-repeat;
+        //background-position: center right;
+        width: 90px;
+        height: 100%;
+        //border: 1px solid red;
+        text-align: center;
+        line-height: 195px;
+
+        i{
+          position: absolute;
+          z-index: -1;
+          left: 6px;
+          top: 3px;
+          font-size: 80px;
+          color:@blue;
+        }
+
+        span{
+
+           line-height: 195px;
+          font-size:35px;
+          z-index:10;
+          color:@red;
+          font-weight: bold;
+        }
+
+
+      }
+      div.right{
+        font-size: 19px;
+        line-height: 195px;
+        padding-left: 10px;
+        color: @ray;
+
+
+      }
+    }
+  }
+}
+
+//-----------------------------------------------------------------------------------------------红色条状
+#red{
+  width: @maxw;
+  //margin-top: 130px;
+  background-color:@commom;
+//background-color: #fc4242;
+height: 50px;
+}
+//-----------------------------------------------------------------------------------------------客户资源
+#customers{
+  background-color: white;
+  height: @customersh;
+  div.customers-container{
+    position: relative;
+    //border: 1px solid @red;
+    margin: 0 auto;
+    //width: 990px;
+    height: 200px;
+
+    div.item{
+      margin-left: 60px;
+      margin-bottom: 40px;
+      float: left;
+      border: 1px solid @ray;
+      &:hover{
+        border: 1px solid @commom;
+      };
+      //.perw(157,990);
+      //width: 157px;
+      width: 175px;
+      height: 92px;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    div.del{
+      margin-left: 0px;
+    }
+
+  }
+}
+

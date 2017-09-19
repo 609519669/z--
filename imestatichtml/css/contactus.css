@@ -1,0 +1,194 @@
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+}
+body {
+  font-family: "宋体";
+  background-position: center 0;
+  background-repeat: no-repeat;
+  width: 1349px;
+  height: auto;
+  padding-top: 83px;
+}
+img {
+  vertical-align: middle;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 4px;
+  vertical-align: middle;
+  border-top: 5px solid;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+.dropup {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-bottom: 5px solid;
+  margin-left: 4px;
+  vertical-align: middle;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+body {
+  padding-top: 83px;
+}
+.ct {
+  border: 1px solid transparent;
+  width: 82.8762046%;
+  height: 100%;
+  margin: 0 auto;
+}
+body > div.Inmiddle-container {
+  width: 1349px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  position: absolute;
+  left: 50%;
+  margin-left: -674.5px;
+}
+body {
+  height: auto;
+}
+div#map {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+div#attention {
+  margin-bottom: 0px;
+}
+div#attention p {
+  padding-left: 5px;
+  border-top: 1px solid #2086ee;
+  border-radius: 5px;
+  padding-top: 30px;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+div#attention p i {
+  color: #2086ee;
+  position: relative;
+  top: 2.5px;
+  padding-right: 5px;
+  font-size: 40px;
+}
+div#attention p span {
+  color: #2086ee;
+}
+div#attention p.info i {
+  color: #88c78b;
+}
+div#attention p.info span {
+  color: #88c78b;
+}
+div#attention p.fail i {
+  color: #fbce01;
+}
+div#attention p.fail span {
+  color: #fbce01;
+}
+div#email {
+  margin: 30px 0px;
+}
+div#email div.left {
+  width: 50%;
+  float: left;
+}
+div#email div.left form {
+  position: relative;
+}
+div#email div.left form label {
+  display: block;
+  margin-bottom: 5px;
+}
+div#email div.left form button {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  background-color: #2086ee;
+  color: white;
+  border-radius: 3px;
+  letter-spacing: 5px;
+}
+div#email div.left form button:hover {
+  background-color: #0067b4;
+}
+div#email div.left form button:focus {
+  outline: 0;
+}
+div#email div.left form > input,
+div#email div.left form textarea {
+  border-radius: 3px;
+  width: 100%;
+  display: block;
+  margin-bottom: 25px;
+  background-color: rgba(227, 243, 255, 0.1);
+  border: 1px solid #ccc;
+  padding: 12px;
+  color: rgba(0, 0, 0, 0.4);
+}
+div#email div.left form > input:focus,
+div#email div.left form textarea:focus {
+  border-color: #66afe9;
+  outline: 0;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 4px rgba(102, 175, 233, 0.6);
+}
+div#email div.left form textarea {
+  max-width: 100%;
+  height: 220px;
+}
+div#email div.address {
+  padding-left: 80px;
+  width: 50%;
+  float: right;
+}
+div#email div.address li {
+  margin-bottom: 20px;
+}
+div#email div.address li p {
+  font-size: 17px;
+}
+div.clearfix {
+  clear: both;
+  height: 0;
+}
+#container {
+  margin: 10px 0;
+  width: 100%;
+  height: 300px;
+}
+#container .title {
+  margin: 0px;
+  color: #666;
+  font-size: 14px;
+  background-color: #eee;
+  border-bottom: solid 1px silver;
+  line-height: 26px;
+  padding: 0px 0 0 6px;
+  font-weight: lighter;
+  letter-spacing: 1px;
+}
+#container .content {
+  padding: 4px;
+  color: #666;
+  line-height: 23px;
+}
+#container .content img {
+  float: left;
+  margin: 3px;
+}
+#container .amap-info-content {
+  padding: 0 0 2px 0px;
+}

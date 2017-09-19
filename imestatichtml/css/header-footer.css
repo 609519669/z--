@@ -1,0 +1,375 @@
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+}
+body {
+  font-family: "宋体";
+  background-position: center 0;
+  background-repeat: no-repeat;
+  width: 1349px;
+  height: auto;
+  padding-top: 83px;
+}
+img {
+  vertical-align: middle;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 4px;
+  vertical-align: middle;
+  border-top: 5px solid;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+.dropup {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-bottom: 5px solid;
+  margin-left: 4px;
+  vertical-align: middle;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+body {
+  padding-top: 83px;
+}
+.ct {
+  border: 1px solid transparent;
+  width: 82.8762046%;
+  height: 100%;
+  margin: 0 auto;
+}
+body > div.Inmiddle-container {
+  width: 1349px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  position: absolute;
+  left: 50%;
+  margin-left: -674.5px;
+}
+#header {
+  cursor: default;
+  position: fixed;
+  z-index: 10000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.175);
+  top: 0;
+  background-color: white;
+  font-size: 16px;
+  width: 1349px;
+  height: 83px;
+  color: black;
+}
+#header div:not(.ct) {
+  height: 100%;
+  float: left;
+}
+#header div.nav {
+  width: 87.65652952%;
+}
+#header div.nav > ul {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-image: url("../images/brand.png");
+  background-repeat: no-repeat;
+  background-position: left 16px;
+}
+#header div.nav > ul > li {
+  font-size: 17px;
+  padding-top: 5px;
+  padding: 5px 30px 0;
+  line-height: 83px;
+  float: right;
+}
+#header div.nav > ul > li:hover {
+  color: rgba(255, 0, 0, 0.6);
+}
+#header div.nav > ul > li:hover > a {
+  color: rgba(255, 0, 0, 0.6);
+}
+#header div.nav > ul > li span.caret {
+  margin-top: -2px;
+}
+#header div.nav > ul > li a {
+  color: black;
+}
+#header div.nav > ul > li.current {
+  color: red;
+}
+#header div.nav > ul > li.current > a {
+  color: red;
+}
+#header div.nav > ul > li ul {
+  display: none;
+  min-width: 140px;
+  position: absolute;
+  top: 104%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  border-radius: 4px;
+  color: black;
+  font-size: 16px;
+}
+#header div.nav > ul > li ul li {
+  box-sizing: content-box;
+  line-height: 100%;
+  margin: 4px 0;
+  padding: 5px 20px;
+}
+#header div.nav > ul > li ul li:hover {
+  background-color: #f5f5f5;
+}
+#header div.nav > ul > li ul li a {
+  color: black;
+}
+#header div.signin {
+  width: 12.25402504%;
+  text-align: right;
+}
+#header div.signin > div {
+  position: relative;
+  height: 28px;
+  color: #fc4242;
+  display: inline-block;
+  float: right;
+  border-radius: 2px;
+  margin-top: 32px;
+  padding: 4px 6px;
+  border: 1px solid #0067b4;
+}
+#header div.signin > div a {
+  color: black;
+}
+#header div.signin > div:hover {
+  background-color: #0067dc;
+}
+#header div.signin > div:hover a {
+  color: white;
+}
+#header div.signin > div:last-child {
+  margin-right: 14px;
+  color: black;
+  /* &:hover{
+        background-color: rgb(0,103,220);
+        a{
+          color: white;
+        }
+      }; */
+}
+#header div.signin > div div.register div.forgot {
+  display: block;
+  width: 100%;
+  padding-right: 4px;
+  margin-top: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 2px;
+  text-align: right;
+  font-size: 12px;
+  height: 25px;
+}
+#header div.signin > div div.register div.forgot:hover {
+  cursor: pointer;
+  color: #f4e600;
+}
+#header div.signin > div div.register div.forgot span {
+  font-size: 10px;
+}
+#header div.signin > div div.pannel {
+  position: relative;
+  display: none;
+  border: 1px solid #ccc ;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.175);
+  z-index: -1;
+  border-radius: 2px;
+  right: 0;
+  top: 51px;
+  position: absolute;
+  width: 274px;
+  height: 280px;
+}
+#header div.signin > div div.pannel:after {
+  z-index: -100;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #0067b4;
+  content: "";
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+}
+#header div.signin > div div.pannel div.container {
+  display: block;
+  width: 230px;
+  margin: 0 20px;
+}
+#header div.signin > div div.pannel div.container div.logo {
+  width: 100%;
+  height: 50px;
+  background-image: url("../images/brand.png");
+  background-position: center center;
+  background-size: 100px 30px;
+  background-repeat: no-repeat;
+  margin-top: 10px;
+}
+#header div.signin > div div.pannel div.container form fieldset {
+  border: 1px solid red;
+  padding: 0;
+  text-align: center;
+  border: none;
+  border: 1px solid transparent;
+  border-top: 1px solid #ccc ;
+}
+#header div.signin > div div.pannel div.container form fieldset legend {
+  text-align: center;
+  margin: auto;
+  color: white;
+  font-size: 14px;
+  padding: 10px 20px;
+}
+#header div.signin > div div.pannel div.container form fieldset span#login_info {
+  height: auto !important;
+}
+#header div.signin > div div.pannel div.container form fieldset input + input {
+  margin-top: 10px;
+}
+#header div.signin > div div.pannel div.container form fieldset input {
+  z-index: 100;
+  padding-left: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  line-height: 1.428;
+  border-radius: 4px;
+  color: #555;
+  width: 100%;
+  height: 34px;
+}
+#header div.signin > div div.pannel div.container form fieldset input:focus {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+#header div.signin > div div.pannel div.container form fieldset input.last {
+  color: white;
+  font-size: 16px;
+  letter-spacing: 4px;
+  background-color: transparent;
+}
+#header div.signin > div div.pannel div.container form fieldset input.last:hover {
+  background-color: rgba(185, 185, 185, 0.3);
+}
+#header div.signin > div div.pannel div.container div.forgot a {
+  color: white;
+}
+#header div.signin > div div.pannel div.container div.forgot a:hover {
+  opacity: .68;
+}
+#links {
+  background-color: #0067b4;
+  height: 296px;
+}
+#links div.middle {
+  margin: 0 auto;
+  height: 100%;
+}
+#links div.middle .item + .item {
+  margin-left: 9.62626263%;
+}
+#links div.middle .item {
+  color: white;
+  margin: 50px 0px;
+  float: left;
+}
+#links div.middle .item h3 {
+  margin: 0 0;
+  margin-bottom: 12px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.9);
+}
+#links div.middle .item ul {
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+}
+#links div.middle .item ul li {
+  margin-bottom: 14px;
+  color: rgba(255, 255, 255, 0.3);
+}
+#links div.middle .item ul li a {
+  color: rgba(255, 255, 255, 0.5);
+}
+#links div.middle .item ul li a:hover {
+  text-decoration: underline;
+}
+#links div.middle .item.last-link .container {
+  width: 190px;
+}
+#links div.middle .item.last-link .container > div {
+  float: left;
+}
+#links div.middle .item.last-link .container div.icon {
+  width: 50px;
+}
+#links div.middle .item.last-link .container div.icon a + a {
+  margin-top: 8px;
+}
+#links div.middle .item.last-link .container div.icon a {
+  color: white;
+  display: inline-block;
+}
+#links div.middle .item.last-link .container div.icon a i {
+  font-size: 36px;
+  opacity: .7;
+}
+#links div.middle .item.last-link .container div.icon a i:hover {
+  opacity: 1;
+}
+#links div.middle .item.last-link .container div.weixin-image {
+  float: right;
+  width: 100px;
+}
+#links div.middle .item.last-link .container div.weixin-image img {
+  margin-left: 12px;
+}
+#links div.middle .item.last-link .container div.weixin-image img {
+  width: 120px;
+  opacity: .7;
+  display: block;
+  float: right;
+}
+#footer {
+  background-color: #0067b4;
+  border-top: 2px solid rgba(255, 255, 255, 0.3);
+  height: 50px;
+  font-size: 12.65px;
+  color: rgba(255, 255, 255, 0.4);
+}
+#footer div.container {
+  margin: 0 auto;
+}
+#footer div.container span {
+  display: block;
+  width: 50%;
+  float: left;
+  margin-top: 5px;
+}
+#footer div.container span.right {
+  text-align: right;
+}

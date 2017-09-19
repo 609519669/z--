@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>文云网</title>
+<meta name="description" content="">
+<meta name="keywords" content="文云网">
+<link rel="stylesheet" href="./css/normalize.css">
+<link rel="stylesheet" href="./css/header-footer.css">
+<link rel="stylesheet" href="./css/startabout.css">
+<link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="stylesheet" type="text/css" href="./font-awesome/iconfont.css">
+<link rel="stylesheet" type="text/css" href="../font-awesome/css/font-awesome.min.css">
+<!-- ime login js  -->
+<script src="../js/global.js" id="global.js"></script>
+<script>
+        var Ext = Ext || {};
+        Ext.theme = {
+            name: ""
+        };
+</script>
+<script src="/ext-5.0.0/build/ext-all.js"></script>
+<script src="/ext-5.0.0/build/packages/ext-theme-crisp/build/ext-theme-crisp.js"></script>
+<script>
+    function login(){
+        setPageCookie('fromlogin',"true");
+        var password = document.getElementById('password').value;
+        var username = document.getElementById('username').value;
+        if(username=="" || password == ''){
+            document.getElementById('login_info_icon').style.display = "inline-block";
+            document.getElementById('login_info_text').innerHTML = "用户名和密码不能为空";
+            return;
+        }
+        Ext.getBody().mask('登陆中...', '提示');
+        Ext.Ajax.request({
+            url:g_url_login,
+            method : 'POST',
+            async: false,
+            params : {
+                password : password,
+                userId : username
+            },
+            success: function(resp,opts) {
+                var respText = resp.responseText;
+                Ext.getBody().unmask();
+                var obj = eval("("+respText+")");
+                if(obj.success){
+                    document.getElementById('login_info_icon').style.display = "none";
+                    document.getElementById('login_info_text').innerHTML = "";
+                    window.location.href="../index.html";
+                }else{
+                    document.getElementById('login_info_icon').style.display = "inline-block";
+                    document.getElementById('login_info_text').innerHTML = obj.msg;
+                }
+            },
+            failure: function(resp,opts) {
+                Ext.getBody().unmask();
+                var respText = resp.responseText;
+                document.getElementById('login_info_icon').style.display = "inline-block";
+                document.getElementById('login_info_text').innerHTML = respText;
+            }
+
+        });
+    }
+
+    function hideLoadDiv(){
+        if(!initMaskDiv){
+            initMaskDiv = document.getElementById('initMaskDiv');
+        }
+        initMaskDiv.style.display = 'none';
+    }
+</script>
+</head>
+<body>
+<div class="Inmiddle-container">
+<!-- -------------------------------------------------------------------------------------------------header -->
+<div id="header">
+<div class="ct">
+<!-- ----------------------------导航 -->
+<div class="nav">
+<ul>
+ <li><a href="contactus.html">联系我们</a></li>
+<li><a href="http://www.megalinkware.com/index.html" target="_blank">美嘉林</a></li>
+<li>产品资料<span class="caret"></span>
+ <ul>
+<li><a href="startabout.html">如何开始</a></li>
+ <li><a href="PDF.html">产品白皮书</a></li>
+ </ul>
+</li>
+<li><a href="price.html">价格</a></li>
+<li class="current"><a href="../imeWeb.html">首页</a></li>
+</ul>
+</div>
+<!-- ----------------------------登陆注册 -->
+<div  class="signin">
+    <div class="loginparent">
+    <span><a href="/imeWeb/jsp/principal/registerAccount.jsp" target="_blank">注册</a></span>
+    </div>
+    <div class="registerparent">
+    <span><a href="">登录</a></span>
+      <div class="register pannel">
+        <div class="container">
+            <div class="logo"></div>
+            <form>
+                <fieldset>
+                <legend>文云网</legend>
+                <span id="login_info"style="margin:0;padding:0;text-align:left;margin-bottom:3px;display:block;height:20px;font-size:12px;">
+                    <span id="login_info_icon" class="fa-stack" style="display:none;">
+                        <i class="fa fa-circle fa-stack-2x" style="color:#fc4242;font-size: 1.5em;top: 0.2em;"></i>
+                        <i class="fa fa-close  fa-stack-1x fa-inverse" style="color:white;"></i>
+                    </span>
+                    <span id="login_info_text" style="color:white;"></span>
+                </span>
+                <input id="username" name="username" type="text" autofocus="autofocus" placeholder="用户名" />
+                <input id="password" name="password" type="password" placeholder="密码" />
+                <input class="last" type="submit"  onClick="login()" value="登录" />
+                </fieldset>
+            </form>
+            <div class="forgot"><a href="" onclick="window.location='/imeWeb/jsp/principal/resetPasswords_first.jsp'" target="_blank">忘记密码<span>>></span></a> </div>
+        </div>
+    </div>
+    </div>
+
+</div>
+</div>
+</div>
+
+<!-- ---------------------------------------------------------------------------------------------当前页路径 -->
+<div id="middle-mask">
+
+</div>
+<!-- ---------------------------------------------------------------------------------------------内容页 -->
+
+<div id="startabout-content">
+<div class="ct">
+<!-- ----------------------------------------左侧区域 -->
+    <div class="content-left">
+    <ul class="box">
+            <li class="first">Step By Step</li>
+            <!-- --------------------------第一项 -->
+            <li>
+                <a class="box-header">进入系统(3)</a>
+                <ul>
+                    <li><a href="#r1">注册账号</a></li>
+                    <li><a href="#r2">登录系统</a></li>
+                    <li><a href="#r3">忘记密码</a></li>
+                </ul>
+            </li>
+            <!-- --------------------------第二项 -->
+            <li>
+                <a class="box-header">资料创作(7)</a>
+                <ul>
+                    <li><a href="#r4">进入数据库</a></li>
+                    <li><a href="#r5">创建非结构化文件</a></li>
+                    <li><a href="#r6">创建结构化文件</a></li>
+                    <li><a href="#r7">分派手册任务</a></li>
+                    <li><a href="#r8">编辑结构化文档</a></li>
+                    <li><a href="#r9">文档重用</a></li>
+                    <li><a href="#r10">数据过滤设定</a></li>
+                </ul>
+            </li>
+
+            <!-- --------------------------第三项 -->
+            <li>
+                <a class="box-header">审核校验(3)</a>
+                <ul>
+                    <li><a href="#r11">打开编辑器进行审核</a></li>
+                    <li><a href="#r12">审核通过</a></li>
+                    <li><a href="#r13">审核不通过</a></li>
+                </ul>
+            </li>
+
+            <!-- --------------------------第四项 -->
+            <li>
+                <a class="box-header">文档发布(2)</a>
+                <ul>
+                    <li><a href="#r14">发布PDF</a></li>
+                    <li><a href="#r15">发布HTML</a></li>
+                </ul>
+            </li>
+
+            <!-- -------------------------- 第五项 -->
+            <li>
+                <a class="box-header">文档变更(6)</a>
+                <ul>
+                    <li><a href="#r16">创建变更活动</a></li>
+                    <li><a href="#r17">变更活动任务分发</a></li>
+                    <li><a href="#r18">抽取变更对象</a></li>
+                    <li><a href="#r19">抽取升版对象</a></li>
+                    <li><a href="#r20">分派任务手册并编写</a></li>
+                    <li><a href="#r21">升版对象完成确认</a></li>
+                </ul>
+            </li>
+            <!-- --------------------------第六项 -->
+            <li>
+                <a class="box-header">文档翻译(3)</a>
+                <ul>
+                    <li><a href="#r22">自动翻译任务</a></li>
+                    <li><a href="#r23">完成翻译任务</a></li>
+                    <li><a href="#r24">翻译审核</a></li>
+                </ul>
+            </li>
+      </ul>
+    </div>
+
+    <div class="content-right">
+    <div class="road-header"><a href="../imeWeb.html">首页</a><a href="#">产品资料</a><a href="#">如何开始</a></div>
+
+       <!-- -------------------------- 进入系统   > 注册账号-->
+        <div id="r1" class="howtodo first">
+        <h3>- 进入系统   > 注册账号</h3>
+        <p>1.在浏览器地址栏中输入网址：http://www.imecms.com/imeWeb/imeWeb.html，进入到文云网首页，点击“注册”按钮创建账号。</p>
+        <img src="" />
+
+          <p>2.填写好注册信息后，点击“立即注册”，即可完成注册，此时系统会自动跳转到欢迎页面。</p>
+        <img src="" />
+        </div>
+<!-- -------------------------- 进入系统   > 登录系统-->
+        <div id="r2" class="howtodo">
+        <h3>- 进入系统   > 登录系统</h3>
+        <p>在文云网首页点击“登录”按钮，输入信息界面输入用户名和密码，点击“登录”进入到系统欢迎页面。</p>
+        <img src="" />
+        </div>
+<!-- -------------------------- 进入系统   > 忘记密码-->
+        <div id="r3" class="howtodo">
+        <h3>- 进入系统   > 忘记密码</h3>
+        <p>1.如果您忘记了密码，不要着急，点击页面右上角的“登录”按钮在登录页面点击【忘记密码】进入到密码重置页面。</p>
+        <img src="" />
+        <p>2.输入您的账户名，点击“下一步”。</p>
+        <img src="" />
+        <p>3.点击“发送验证码”，手机收到验证码后，填写验证码，点击“提交”。</p>
+        <img src="" />
+        <p>4.设置完新密码后，点击重置。</p>
+        <img src="" />
+        <p>5.设置成功后，页面会自动跳转至登录界面;如果没有跳转，也可以手动“点击跳转”，进入登录界面。</p>
+        <img src="" />
+        </div>
+
+        <!-- -------------------------- 资料创作   > 进入存储库-->
+        <div id="r4" class="howtodo">
+        <h3>- 资料创作   > 进入存储库</h3>
+        <p>账户登录成功后跳转到欢迎首页，页面会自动进入使用首页，进行试用。</p>
+        <img src="" />
+        </div>
+
+        <!-- -------------------------- 进入系统   > 创建非结构化文件-->
+        <div id="r5" class="howtodo">
+        <h3>- 资料创作   > 创建非结构化文件</h3>
+        <p>1.例如，创建图片：用户在系统首页点击【存储库】进入到文件库管理页面，先选择多媒体文件夹【11-Multimedia】，点击“创建文档”创建非结构化文件。</p>
+        <img src="" />
+        <p>2.先选择要创建的文档类型，例如：创建图片，就选择“多媒体文件”；再点击“选择”，上传电脑本地的图片信息，点击【保存】按钮保存上传的图片文件信息。</p>
+        <img src="" />
+        <p>3.图片会存在刚刚选择的多媒体文件夹【11-Multimedia】下,点击“下载”，可以看到图片。</p>
+        <img src="" />
+
+         <p>4.双击这条记录，点击“预览”，也可以看到图片。</p>
+        <img src="" />
+        <p>5.批量上传图片操作</p>
+        <img data-n="13-1" src="" />
+        </div>
+
+        <!-- -------------------------- 进入系统   > 创建结构化文件-->
+        <div id="r6" class="howtodo">
+        <h3>- 资料创作   > 创建结构化文件</h3>
+        <p>1.用户在系统首页点击【存储库】进入到文件库管理页面，先点击“手册结构”文件夹，再点击“创建DITA文档”创建结构化文件。</p>
+        <img src="" />
+        <p>2.需选择要创建的文档类型，如：用户手册，1）可选择空白文档或者样例点击【确认】进入到下个操作页面；2）在保存文档信息页面输入文档名称点击【保存】按钮保存创建的文档。</p>
+        <img src="" />
+        <p>3.在type下填入值：topic,点击保存，这样系统会自动创建一个空的主题链接到这本用户手册中。温馨提示：目前系统支持四种标准DITA文档：topic、task、concept、reference,在type中键入相应的值就会自动创建相应类型的文档链接到这本手册中，保存操作。</p>
+        <img src="" />
+        <p>1)编辑手册结构MAP时，可以添加现有的topic等文件实现文档重用，在编辑页面点击右上方【关联MAP】进入到关联MAP操作页面，点击“打开”按钮可以搜索现有文件；</p>
+        <img data-n="16-1" src="" />
+        <p>2)在文档搜索页面选择文档类型和存储空间，点击【搜索】查看结果列表，在文件列表中打开要重用的文档，便于接下来的操作。</p>
+        <img data-n="16-2" src="" />
+        <p>3)将选中要添加的文档可直接从右边拖动到左边对应的层级目录下。</p>
+        <img data-n="16-3" src="" />
+         <p>4.填写完手册结构信息后点击保存操作。</p>
+        <img src="" />
+        <p>5.接下来，我们再创建一个警告。点击左上角的“新建”。</p>
+        <img src="" />
+        <p>6.选择“警示信息”这一文档类型，点击确定。</p>
+        <img src="" />
+        <p>7.点击保存，并填写相关信息，点击确定，这样警告就创建完成。好了，到这里，我们创建结构化文档的工作包括：创建了一本手册，链接了一个空的主题，另外还新建了一个警告信息。</p>
+        <img src="" />
+        </div>
+
+        <!-- -------------------------- 进入系统   > 分派任务手册-->
+        <div id="r7" class="howtodo">
+        <h3>- 资料创作   > 分派任务手册</h3>
+        <p>1.用户在系统首页点击【存储库】进入到文件库管理页面，先点击手册文件夹【01-DocMap】，在右边页面列表中选中需要分派任务的手册记录，然后点击右键，在菜单中选择“分派手册任务”，进入操作页面。</p>
+        <img src="" />
+        <p>2.选择要分派任务的手册章节,设置作者、审判者和截止日，可以选择多个章节内容进行【批量设置】，勾选手册章节点击“开始任务”进行任务分派。</p>
+        <img src="" />
+        </div>
+
+        <!-- -------------------------- 进入系统   >  编辑结构化文档-->
+        <div id="r8" class="howtodo">
+        <h3>- 资料创作   > 编辑结构化文档</h3>
+        <p>1.在“我的任务”中找到要编写的任务，点击“iWen编辑器打开”。</p>
+        <img src="" />
+        <p>2.在内容编辑器里面，点击检出进行操作。</p>
+        <img src="" />
+         <p>
+         3.例如在文档中插入图片操作：
+         </p>
+         <p>
+         （1）在body标签后单机鼠标右键，弹出标签显示框，点击【image】标签，插入到文档中；
+         </p>
+        <img src="" />
+
+        <p>
+        友情提醒：目前我们使用的是DITA标准标签，如果您有需要，上海美嘉林软件科技有限公司可以为您专门定制标签。
+        </p>
+        <p>
+       （2）插入【image】标签后，页面弹出选择图片的操作页面，先选择存放图片的位置后，可以添加其他图片的信息，再点击“确认”按钮上传图片；
+        </p>
+        <img src="" />
+        <p>
+         图片上传完成后会直接显示在编辑文档页面，这样图片就上传成功了。
+        </p>
+        <img src="" />
+        <p>
+       （3）设置图片大小
+        </p>
+         <p>
+       点击图片，在属性宽度中填写图片的宽度，目前仅支持px、mm、cm、m为单位的值。请注意：如果不填宽度值，那么就会显示图片的原图大小。
+        </p>
+        <img src="" />
+        <p>（4）插入图片时也可选择存储库已有图片编辑到文档中，在页面弹出选择图片的操作页面中搜索已有图片选择插入到文档中。</p>
+        <img data-n="28-1" src="" />
+
+        <p>4.在文档中插入表格操作：</p>
+         <p>
+       （1）在body标签后单击鼠标右键，弹出标签操作框，点击【table】标签，插入到文档中；
+        </p>
+        <img src="" />
+        <p>
+       （2）在table标签中插入表格行和列；
+        </p>
+        <img src="" />
+        <p>
+        （3）在table标签中单击鼠标右键，在弹出的操作框中点击【设置表头】，将表格的某一行设置为表头；
+        </p>
+        <img src="" />
+        <img src="" />
+        <p>(4)选择需要合并的表格单元格，点击页面合并单元格按钮操作；</p>
+        <img data-n="30-1" src="" />
+        <p>(5)页面上方按钮提供增加表格列和行的操作，鼠标点击到需要增加列或者行的单元格中再操作；</p>
+        <img data-n="30-2" src="" />
+        <p>(6)在页面属性信息中，可调整表格的单元格宽度信息；</p>
+        <img data-n="30-3" src="" />
+        <p>5.在文档中插入有序列表无序列表操作：</p>
+         <p>
+       （1）在body标签后单击鼠标右键，弹出标签操作框，点击【ol】或者【ul】标签，插入到文档中；
+        </p>
+        <img data-n="30-4" src="" />
+        <p>(2)点击插入公式图标，在文档信息页面插入公式信息；</p>
+        <img data-n="30-6" src="" />
+        <p>(3)针对需要拆分的内容，可鼠标点击拆分位置右键选择【拆分】按钮后内容自动拆分为两部分；</p>
+        <img data-n="30-5" src="" />
+        </div>
+
+        <!-- -------------------------- 资料创作   > 文档重用-->
+        <div id="r9" class="howtodo">
+        <h3>- 资料创作   > 文档重用</h3>
+        <p>1.重用警告：</p>
+        <p>（1）选中p标签后点击右键，选择“引用”</p>
+        <img src="" />
+        <p>（2）在引用文档搜索页面，先搜索需要引用的文档，再选中点击“确认”按钮添加到现有文档中；</p>
+        <img src="" />
+        <p>（3）在编辑页面可以查看xml源数据；</p>
+        <img data-n="35-1" src="" />
+        <p>2.查看效果：</p>
+        <p>（1）点击保存，再点击html预览</p>
+        <img src="" />
+        <p>（2）html预览后的效果如下：</p>
+        <img src="" />
+        </div>
+
+        <!-- -------------------------- 资料创作   > 数据过滤设定-->
+        <div id="r10" class="howtodo">
+        <h3>- 资料创作   > 数据过滤设定</h3>
+        <p>1.回到前面编辑topic的页面，点击“适用性编辑”按钮，进行数据过滤设定</p>
+        <img src="" />
+        <p>2.点击“检入”，保存修改的操作。</p>
+        <img src="" />
+
+        </div>
+
+
+        <!-- -------------------------- 审核校验   > 打开编辑器进行审核-->
+        <div id="r11" class="howtodo">
+        <h3>- 审核校验   > 打开编辑器进行审核</h3>
+        <p>1.在内容审核任务的浮动菜单上点击“iWen编辑器打开”，从文档中直接完成任务；</p>
+        <img src="" />
+        <p>2.在完成任务页面填写对应的信息后，点击“完成”按钮完成任务。</p>
+        <img src="" />
+        </div>
+
+
+
+        <!-- -------------------------- 审核校验   > 审核通过-->
+        <div id="r12" class="howtodo">
+        <h3>- 审核校验   > 审核通过</h3>
+        <p>1.点击关闭编辑文档按钮回到非全屏状态；</p>
+        <img src="" />
+        <p>2.点击“我的任务”回到任务拦，可以选择多条任务信息，进行批量审核操作；</p>
+        <img src="" />
+        <p>3.点击【批量完成】按钮完成多个任务操作。</p>
+        <img src="" />
+        </div>
+
+
+
+        <!-- -------------------------- 审核校验   > 审核不通过-->
+        <div id="r13" class="howtodo">
+        <h3>- 审核校验   > 审核不通过</h3>
+        <p>1.双击任务记录，进入到审批信息填写页面；</p>
+        <img src="" />
+        <p>2.审核不通过，任务驳回到手册编写人的任务栏。</p>
+        <img src="" />
+
+        </div>
+
+        <!-- -------------------------- 文档发布   > 发布PDF-->
+        <div id="r14" class="howtodo">
+        <h3>- 文档发布   > 发布PDF</h3>
+        <p>1.用户可以在存储库中选择手册信息，鼠标右键点击【分派手册任务】进入查看全部主题进展情况界面；</p>
+        <img src="" />
+        <p>在查看全部主题进展情况页面中可以筛选文档的生命周期，看topic的工作任务状态；</p>
+        <img src="" />
+        <p>2.在存储库中选择手册信息，鼠标右键点击【分派手册任务】启动map的工作流任务审核整本手册task等章节信息；</p>
+        <img src="" />
+        <p>在分派手册任务页面，点击map节点设置对应的审批信息，然后【开始任务】启动工作流。</p>
+        <img src="" />
+        <p>3.在进行手册审核任务时，用户可进入手册进行pdf发布来审批整本内容；</p>
+        <img src="" />
+        <p>1)pdf发布时，勾选对应的过滤信息，选择对应的单栏或者双栏的发布样式，点击【整本PDF发布】进行发布；</p>
+        <img src="" />
+        <p>2)查看发布出来的PDF文档</p>
+        <img src="" />
+        <p>4.在文档对象信息页面查看发布结果信息，PDF的结果列表会提供【批注】的操作链接；</p>
+        <img data-n="56-1" src="" />
+        <p>点击【批注】操作链接进入到PDF批注编辑页面；</p>
+        <img data-n="56-2" src="" />
+        <p>在编辑批注页面，可以点击对应的操作图标，插入文档批注信息；</p>
+        <img data-n="56-3" src="" />
+        <p>5.手册审核完成</p>
+        <img src="" />
+        </div>
+
+        <!-- -------------------------- 文档发布   > 发布HTML-->
+        <div id="r15" class="howtodo">
+        <h3>- 文档发布   > 发布HTML</h3>
+        <p>1.选中手册，点击右键，在弹出的菜单中选择“发布HTML”</p>
+        <img src="" />
+        <p>2.发布维修手册时，可以选择单个topic章节增量发布html文档；</p>
+        <img src="" />
+        <p>3.在系统中查看发布出来的HTML文档</p>
+        <img src="" />
+        <p>4.全量发布html</p>
+
+        </div>
+
+        <!-- -------------------------- 文档变更   > 创建变更活动-->
+        <div id="r16" class="howtodo">
+        <h3>- 文档变更   > 创建变更活动</h3>
+        <p>1.先点击“变更任务”文件夹，再点击“创建变更活动”；</p>
+        <img src="" />
+        <p>2.填写变更活动的相关信息。</p>
+        <img src="" />
+        </div>
+
+        <!-- -------------------------- 文档变更   > 变更活动任务分发-->
+        <div id="r17" class="howtodo">
+        <h3>- 文档变更   > 变更活动任务分发</h3>
+        <p>1.点击“我的任务”，找到名称为“变更活动任务分发”的任务，双击此任务；</p>
+        <img src="" />
+        <p>2.点击“添加”按钮，添加变更提取负责人；</p>
+        <img src="" />
+        <p>3.选择用户；</p>
+        <img src="" />
+        <p>4.填写说明，点击完成。</p>
+        <img src="" />
+        </div>
+
+        <!-- -------------------------- 文档变更   > 抽取变更对象-->
+        <div id="r18" class="howtodo">
+        <h3>- 文档变更   > 抽取变更对象</h3>
+        <p>1.用变更提取负责人的账号登陆系统，可以在我的任务中看到抽取变更对象的任务,双击这条任务；</p>
+        <img src="" />
+        <p>2.在任务信息页面点击“文档对象”名称链接；</p>
+        <img src="" />
+        <p>3.在文档对象信息页面点击【受影响对象】选修卡，鼠标点击“添加”图标操作；</p>
+        <img src="" />
+        <p>4.在对象搜索页面搜索需添加的文档，添加到受影响对象列表中；</p>
+        <img src="" />
+        <p>5.收集受影响对象，保存操作；</p>
+        <img src="" />
+        <p>6.关闭文档对象操作页面，在任务信息页面完成审核变更对象的操作。</p>
+        <img src="" />
+        </div>
+
+        <!-- -------------------------- 文档变更   > 抽取升版对象-->
+        <div id="r19" class="howtodo">
+        <h3>- 文档变更   > 抽取升版对象</h3>
+        <p>1.用审核人的账号登陆系统，可以在我的任务中看到抽取升版对象的任务,双击这条任务；</p>
+        <img src="" />
+        <p>2.在任务信息页面点击“文档对象”名称链接，在文档对象信息页面点击【受影响对象】选修卡，鼠标点击“升版”图标操作；</p>
+        <img src="" />
+        <p>3.添加升版对象，确认操作；</p>
+        <img src="" />
+        <p>4.关闭文档对象操作页面，在任务信息页面完成审核变更对象的操作。</p>
+        <img src="" />
+        </div>
+
+        <!-- -------------------------- 文档变更   > 分派手册任务并编写-->
+        <div id="r20" class="howtodo">
+        <h3>- 文档变更   > 分派手册任务并编写</h3>
+        <p>此步骤不再赘述，请参见资料创作下的分派手册任务和编辑结构化文档</p>
+        </div>
+
+        <!-- -------------------------- 文档变更   > 升版对象完成确认-->
+        <div id="r21" class="howtodo">
+        <h3>- 文档变更   > 升版对象完成确认</h3>
+        <p>此步骤不再赘述，请参见资料创作下的分派手册任务和编辑结构化文档</p>
+        <img src="" />
+        </div>
+
+        <!-- -------------------------- 文档变更   > 启动翻译任务-->
+        <div id="r22" class="howtodo">
+        <h3>- 文档翻译   > 启动翻译任务</h3>
+        <p>1.选中手册结构，然后点击右键，在菜单中选择“翻译”，需要注意的是启动翻译任务时手册文档必须是“定稿”状态才能启动；</p>
+        <img src="" />
+        <p>2.选择翻译语言</p>
+        <img src="" />
+        </div>
+
+        <!-- -------------------------- 文档变更   > 完成翻译任务-->
+        <div id="r23" class="howtodo">
+        <h3>- 文档翻译   > 完成翻译任务</h3>
+        <p>1.点击“我的任务”回到任务拦，再双击内容翻译任务</p>
+        <img src="" />
+        <p>2.点击文档对象后的链接</p>
+        <img src="" />
+        <p>3.在文档对象信息页面点击下载链接，下载文档进行线下翻译；</p>
+        <img src="" />
+        <p>4.上传翻译结果</p>
+        <img src="" />
+        <p>5.添加内容审核人</p>
+        <img src="" />
+        </div>
+
+        <!-- -------------------------- 文档变更   > 翻译审核-->
+        <div id="r24" class="howtodo">
+        <h3>- 文档翻译   > 翻译审核</h3>
+        <p>1.在我的任务中收到翻译审核任务，双击此任务</p>
+        <img src="" />
+        <p>2.点击文档对象后的链接</p>
+        <img src="" />
+        <p>3.点击名称后的链接，可以将翻译文档压缩包下载下来进行审核</p>
+        <img src="" />
+        <p>4.如果审核通过，就填写说明并点击完成。如果审核不通过，就点击驳回，同样会驳回到完成收到翻译任务的人的任务栏</p>
+        <img src="" />
+        </div>
+
+
+    </div>
+
+</div>
+</div>
+
+</div>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/startabout.js"></script>
+<script src="./js/header.js"></script>
+</body>
+</html>

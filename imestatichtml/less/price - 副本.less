@@ -1,0 +1,112 @@
+@import "scaffolding.less";
+
+body{
+    height:auto;
+}
+@priceh:620px;
+#price{
+    background-color: rgba(0,0,255,.01);
+    //border: 1px solid red;
+    height: @priceh;
+
+    .price-container{
+        margin: 35px 0;
+        div.column{
+            animation:myfirst 5s;
+            border-top: 2px solid @blue;
+            position: relative;
+            z-index: 1;
+            float: left;
+            &:hover{
+                //border-top: 2px solid @commom;
+                box-shadow: 4px 7px 7px rgba(0,0,0,.08);
+                z-index:2;
+                margin-top:-3px;
+                a{
+                   transition: background-color  0.6s;
+                   //background-color:@commom;
+                   //border:1px solid @commom;
+                    background-color: #2086ee;
+                    color: white;
+                }
+                div.column-top{
+                    transition: background-color 0.6s;
+                    //background-color:@commom;
+                    background-color: #2086ee;
+                    color: white;
+                    span{
+                        color: white;
+                    }
+                }
+            };
+            &.second{
+                border-left: 1px solid #eee;
+                border-right: 1px solid #eee;
+            }
+            >div{
+                margin: 0 auto;
+            }
+            //border: 1px solid red;
+            padding-bottom:25px;
+            width: 33.333333%;
+            text-align: center;
+            background: #fff;
+            z-index: 1;
+            div.column-top{
+                background-color: rgba(0,0,255,.05);
+                margin-bottom: 3px;
+                p{
+                    margin-top: 0;
+                   padding:15px 0;
+                   font-size: 25px;
+                   font-weight: bold;
+                   letter-spacing: 1px;
+                   //border: 1px solid red;
+                   span{
+                    position: relative;
+                    display: inline-block;
+                    font-size: 35px;
+                    line-height: 35px;
+                    padding-right: 5px;
+                    top: 3px;
+                    color: #2086ee;
+                   }
+                }
+
+              }
+            div.price{
+                border: 1px solid rgba(0,0,0,.2);
+                color: @red;
+                font-size: 30px;
+                width: 100px;
+                height: 100px;
+                line-height: 100px;
+               border-radius: 60px;
+               margin-bottom: 15px;
+               span{
+                font-size: 16px;
+                color: black;
+               }
+            }
+            >p{
+                font-size: 15px;
+                margin: 5px 49px;
+                border-bottom: 1px solid #e6e5e5;
+                line-height: 42px;
+            }
+            a{
+                margin-top: 20px;
+                display: inline-block;
+                border: 1px solid @blue;
+                color: @blue;
+                border-radius:2px;
+                padding: 10px 30px;
+
+            }
+
+
+        }
+
+
+    }
+}

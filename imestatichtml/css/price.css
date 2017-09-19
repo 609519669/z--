@@ -1,0 +1,238 @@
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+}
+body {
+  font-family: "宋体";
+  background-position: center 0;
+  background-repeat: no-repeat;
+  width: 1349px;
+  height: auto;
+  padding-top: 83px;
+}
+img {
+  vertical-align: middle;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 4px;
+  vertical-align: middle;
+  border-top: 5px solid;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+.dropup {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-bottom: 5px solid;
+  margin-left: 4px;
+  vertical-align: middle;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+body {
+  padding-top: 83px;
+}
+.ct {
+  border: 1px solid transparent;
+  width: 82.8762046%;
+  height: 100%;
+  margin: 0 auto;
+}
+body > div.Inmiddle-container {
+  width: 1349px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  position: absolute;
+  left: 50%;
+  margin-left: -674.5px;
+}
+body {
+  height: auto;
+  background-color: rgba(0, 0, 255, 0.01);
+}
+#price {
+  margin-bottom: 65px;
+  height: 550px;
+}
+#price .price-container {
+  margin: 35px 0;
+}
+#price .price-container div.column {
+  animation: myfirst 5s;
+  border-top: 2px solid #0067b4;
+  position: relative;
+  float: left;
+  padding-bottom: 25px;
+  width: 33.333333%;
+  text-align: center;
+  background: #fff;
+  z-index: 1;
+}
+#price .price-container div.column:hover {
+  box-shadow: 4px 7px 7px rgba(0, 0, 0, 0.08);
+  z-index: 2;
+  margin-top: -3px;
+}
+#price .price-container div.column:hover a {
+  transition: background-color 0.6s;
+  background-color: #2086ee;
+  color: white;
+}
+#price .price-container div.column:hover div.column-top {
+  transition: background-color 0.6s;
+  background-color: #2086ee;
+  color: white;
+}
+#price .price-container div.column:hover div.column-top span {
+  font-size: 25px;
+  color: white;
+}
+#price .price-container div.column:hover table td i {
+  color: #2086ee;
+}
+#price .price-container div.column.second {
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+}
+#price .price-container div.column > div {
+  margin: 0 auto;
+}
+#price .price-container div.column div.column-top {
+  background-color: rgba(0, 0, 255, 0.05);
+  margin-bottom: 3px;
+}
+#price .price-container div.column div.column-top p {
+  margin-top: 0;
+  padding: 15px 0;
+  line-height: 35px;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+#price .price-container div.column div.column-top p span {
+  font-size: 30px;
+  padding-right: 8px;
+  color: #2086ee;
+}
+#price .price-container div.column div.price {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: #fc4242;
+  font-size: 30px;
+  width: 120px;
+  height: 120px;
+  line-height: 100px;
+  border-radius: 60px;
+  margin-bottom: 10px;
+}
+#price .price-container div.column div.price span {
+  position: relative;
+  top: -15px;
+  line-height: 0;
+  display: block;
+  font-size: 18px;
+  color: black;
+}
+#price .price-container div.column > p {
+  padding: 0;
+  margin: 0;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  color: black;
+  line-height: 35px;
+  font-size: 18px;
+}
+#price .price-container div.column > p span {
+  color: #fc4242;
+  font-weight: bold;
+}
+#price .price-container div.column table {
+  width: 100%;
+}
+#price .price-container div.column table col {
+  text-align: right;
+}
+#price .price-container div.column table tr td {
+  line-height: 35px;
+  font-size: 18px;
+  border-top: 1px solid #e6e5e5;
+  border-bottom: 1px solid #e6e5e5;
+}
+#price .price-container div.column table tr td:first-child {
+  width: 40%;
+  text-align: right;
+  padding-right: 7px;
+}
+#price .price-container div.column table tr td:last-child {
+  width: 60%;
+  padding: 9px 0px;
+  text-align: center;
+  padding-right: 90px;
+}
+#price .price-container div.column a {
+  margin-top: 20px;
+  display: inline-block;
+  color: #0067b4;
+  border-radius: 2px;
+  padding: 10px 20px;
+}
+div#description p {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 80px 0 15px;
+}
+div#table table {
+  background-color: white;
+  margin: 20px 0;
+  margin-bottom: 35px;
+  width: 100%;
+}
+div#table table col.h {
+  background-color: white;
+}
+div#table table col.h:hover {
+  background-color: red;
+}
+div#table table tbody + tbody {
+  margin-top: 4px;
+}
+div#table table i {
+  font-size: 18px;
+  color: black;
+}
+div#table table thead tr td {
+  background-color: #2086ee;
+  color: white;
+}
+div#table table tr {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+div#table table tr.clear {
+  height: 5px;
+}
+div#table table tr.clear td {
+  padding: 0;
+}
+div#table table td {
+  padding: 15px 0px;
+  text-align: center;
+}
+div#table table tfoot td i {
+  padding-left: 10px;
+  padding-right: 5px;
+  vertical-align: center;
+}

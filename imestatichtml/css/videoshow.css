@@ -1,0 +1,94 @@
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+}
+body {
+  font-family: "宋体";
+  background-position: center 0;
+  background-repeat: no-repeat;
+  width: 1349px;
+  height: auto;
+  padding-top: 83px;
+}
+img {
+  vertical-align: middle;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 4px;
+  vertical-align: middle;
+  border-top: 5px solid;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+.dropup {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-bottom: 5px solid;
+  margin-left: 4px;
+  vertical-align: middle;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+body {
+  padding-top: 83px;
+}
+.ct {
+  border: 1px solid transparent;
+  width: 82.8762046%;
+  height: 100%;
+  margin: 0 auto;
+}
+body > div.Inmiddle-container {
+  width: 1349px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  position: absolute;
+  left: 50%;
+  margin-left: -674.5px;
+}
+.mysetwidth {
+  float: none !important;
+}
+.wb-zc-ali-aliyunprodu-lesson-pc .module-wrap {
+  padding-top: 50px;
+  background-color: white !important;
+}
+.wb-zc-ali-aliyunprodu-lesson-pc .module-wrap {
+  width: auto !important;
+}
+.wb-zc-ali-aliyunprodu-lesson-pc .module-wrap .intro {
+  width: 1200px !important;
+}
+.wb-zc-ali-aliyunprodu-lesson-pc .module-wrap .intro .items {
+  width: auto !important;
+}
+.wb-zc-ali-aliyunprodu-lesson-pc .module-wrap .intro .items .item {
+  width: 25% !important;
+  margin-bottom: 60px !important;
+}
+.wb-zc-ali-aliyunprodu-lesson-pc .module-wrap .intro .button a {
+  border: 1px solid #0067b4 !important;
+  color: #0067b4 !important;
+}
+.wb-zc-ali-aliyunprodu-lesson-pc .module-wrap .intro .items .item a .text1,
+.wb-zc-ali-aliyunprodu-lesson-pc .module-wrap .intro .items .item a .text2 {
+  color: #0067b4 !important;
+}
+.wb-zc-ali-aliyunprodu-lesson-pc .module-wrap .intro .items .item a .text1,
+.wb-zc-ali-aliyunprodu-lesson-pc .module-wrap .intro .items .item a .text2 {
+  line-height: 25px;
+}

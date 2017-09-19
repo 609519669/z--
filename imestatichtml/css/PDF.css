@@ -1,0 +1,222 @@
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+}
+body {
+  font-family: "宋体";
+  background-position: center 0;
+  background-repeat: no-repeat;
+  width: 1349px;
+  height: auto;
+  padding-top: 83px;
+}
+img {
+  vertical-align: middle;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 4px;
+  vertical-align: middle;
+  border-top: 5px solid;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+.dropup {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-bottom: 5px solid;
+  margin-left: 4px;
+  vertical-align: middle;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+body {
+  padding-top: 83px;
+}
+.ct {
+  border: 1px solid transparent;
+  width: 82.8762046%;
+  height: 100%;
+  margin: 0 auto;
+}
+body > div.Inmiddle-container {
+  width: 1349px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  position: absolute;
+  left: 50%;
+  margin-left: -674.5px;
+}
+a {
+  color: black;
+}
+#PDF-nav {
+  z-index: 1001;
+  border: 1px solid red;
+  width: 100%;
+  height: 80px;
+}
+#middle-mask {
+  z-index: 100;
+  height: 30px;
+  margin-top: 0px;
+  width: 1349px;
+  height: 89px;
+  top: 24px;
+  position: fixed;
+  background-color: white;
+}
+#PDF-content div.ct > div {
+  float: left;
+}
+#PDF-content div.content-left {
+  position: fixed;
+  width: 30%;
+  height: 100%;
+}
+#PDF-content div.content-left > ul.box {
+  border: 1px solid #dedede;
+  margin: 30px 30px;
+  display: inline-block;
+  width: 260px;
+  background-color: rgba(0, 0, 255, 0.01);
+}
+#PDF-content div.content-left > ul.box > li {
+  border-top: 1px solid #dedede;
+  font-size: 15px;
+}
+#PDF-content div.content-left > ul.box > li.first {
+  position: relative;
+  border-top: none;
+  padding: 10px 8px;
+  background-color: #0067b4;
+  color: white;
+}
+#PDF-content div.content-left > ul.box > li.first span {
+  display: none;
+  position: absolute;
+  right: 8px;
+  top: 17px;
+}
+#PDF-content div.content-left > ul.box > li > a.box-header {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 12px 8px;
+}
+#PDF-content div.content-left > ul.box > li > a:hover {
+  background-color: rgba(0, 0, 255, 0.06);
+}
+#PDF-content div.content-left > ul.box > li > a.box-header:after {
+  position: absolute;
+  top: 13px;
+  right: 9px;
+  font-size: 14px;
+}
+#PDF-content div.content-left > ul.box > li > ul {
+  margin-top: 5px;
+  margin-bottom: 12px;
+  padding: 0;
+}
+#PDF-content div.content-left > ul.box > li > ul li + li {
+  margin-top: 10px;
+}
+#PDF-content div.content-left > ul.box > li > ul > li {
+  font-size: 13px;
+  position: relative;
+  padding-left: 27px;
+}
+#PDF-content div.content-left > ul.box > li > ul > li > a {
+  color: rgba(0, 0, 0, 0.6);
+}
+#PDF-content div.content-left > ul.box > li > ul > li > a:hover {
+  text-decoration: underline;
+}
+#PDF-content div.content-left > ul.box > li > ul li:before {
+  position: absolute;
+  content: ">";
+  font-size: 12px;
+  top: 0;
+  left: 10px;
+}
+#PDF-content div.content-right {
+  padding-bottom: 40px;
+  margin-left: 30%;
+  margin-top: 30px;
+  width: 70%;
+  height: 100%;
+}
+#PDF-content div.content-right div.road-header {
+  width: 782px;
+  background-color: white;
+  position: fixed;
+  border-top: 1px solid #dedede;
+  border-bottom: 1px solid #dedede;
+  padding: 10px 8px;
+  text-align: right;
+  margin-top: -1px;
+}
+#PDF-content div.content-right div.road-header a + a {
+  padding-left: 8px;
+}
+#PDF-content div.content-right div.road-header a {
+  letter-spacing: 1px;
+  font-size: 12px;
+  cursor: auto;
+  color: #767676 ;
+}
+#PDF-content div.content-right div.road-header a:hover {
+  text-decoration: underline;
+}
+#PDF-content div.content-right div.road-header a:after {
+  content: ">";
+  padding-left: 8px;
+  font-size: 12px;
+}
+#PDF-content div.content-right div.howtodo + div.howtodo {
+  margin-top: 20px;
+}
+#PDF-content div.content-right div.howtodo.first {
+  margin-top: 40px;
+}
+#PDF-content div.content-right div.howtodo h3 {
+  z-index: -100;
+  position: relative;
+  color: black;
+  margin: 0;
+  font-weight: normal;
+  letter-spacing: 2px;
+  font-size: 15px;
+  padding: 11px 8px;
+}
+#PDF-content div.content-right div.howtodo h3:after {
+  z-index: -100;
+  position: absolute;
+  content: " ";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 255, 0.08);
+}
+#PDF-content div.content-right div.howtodo p {
+  font-size: 15px;
+  color: #767676 ;
+  margin: 20px 0;
+}
+#PDF-content div.content-right div.howtodo img {
+  width: 100%;
+}

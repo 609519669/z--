@@ -1,0 +1,93 @@
+@import "mixin.less";
+@import "variable.less";
+
+*{
+box-sizing:border-box;
+-moz-box-sizing:border-box; /* Firefox */
+-webkit-box-sizing:border-box; /* Safari */
+}
+
+div{
+  //opacity: 0.8;
+  //color: black;
+ //border: 1px solid red;
+}
+body{
+  font-family:"宋体" ;
+  //background-image: url("images/xiao.jpg");
+  background-position: center 0;
+  background-repeat:no-repeat;
+  width: @maxw;
+  height: auto;
+  padding-top: @headerh;
+}
+
+img {
+  vertical-align: middle;
+}
+
+html{
+    //background: blue;
+}
+
+ul{
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+}
+a{
+  text-decoration: none;
+  //color: black;
+}
+
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 4px;
+  vertical-align: middle;
+  border-top: 5px solid;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+
+.dropup{
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-bottom: 5px solid;
+  margin-left: 4px;
+  vertical-align: middle;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+
+.current{
+  //color: rgba(255,0,0,.6);
+}
+
+//-----------------------------------------------------------------------------------------------框架容器大小
+//--------------------------------框架容器大小
+
+
+
+body{
+    padding-top: @headerh;
+}
+//---------------------------------------------各个id块的容器是一样的
+.ct{
+     border:1px solid transparent;
+    .perw(@ct,@maxw);
+    height: 100%;
+    //background: blue;
+    margin: 0 auto;
+   }
+//---------------------------------------------使整体页面居中块
+ body>div.Inmiddle-container{
+  width:@maxw;
+  //border: 5px solid red;
+  box-shadow:0 6px 12px rgba(0,0,0,.175);
+  position:absolute;
+   left:50%;
+   margin-left: -674.5px;
+   }

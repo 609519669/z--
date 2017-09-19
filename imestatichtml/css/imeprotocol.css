@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+}
+#container {
+  position: absolute;
+  left: 50%;
+  padding-top: 10px;
+  margin-left: -500px;
+  color: #666666;
+  font-size: 13px ;
+  line-height: 26px;
+  font-family: PingFangSC-Light, 'helvetica neue', 'hiragino sans gb', arial, 'microsoft yahei ui', 'microsoft yahei', simsun, sans-serif;
+}
+#container a {
+  color: black;
+  text-decoration: none;
+}
+#container ul,
+#container li,
+#container h3,
+#container h2,
+#container p,
+#container div {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+#container div.left {
+  position: fixed;
+  font-size: 14px;
+  text-align: left;
+  float: left;
+  width: 200px;
+}
+#container div.left a {
+  color: #4078c0;
+}
+#container div.left a:hover {
+  border-bottom: 1px solid #4078c0;
+}
+#container div.left a:focus {
+  color: black;
+}
+#container div.left a span {
+  padding-right: 5px;
+}
+#container div.left div.logo img {
+  width: 120px;
+}
+#container div.right {
+  margin-left: 220px;
+  float: left;
+  width: 800px;
+}
+#container div.right div.header {
+  font-size: 16px;
+  width: 800px;
+  background-color: #0a84d5;
+  color: white;
+  padding: 5px;
+}
+#container div.right div.content {
+  padding-left: 20px;
+  border-left: 1px solid rgba(10, 132, 213, 0.6);
+}
+#container div.right div.content > ul > li {
+  margin-bottom: 35px;
+}
+#container div.right div.content > ul > li > h2 {
+  color: #000;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 18px;
+  margin-bottom: 16px;
+}
+#container div.right div.content > ul > li > ul > li > strong {
+  display: block;
+  color: rgba(0, 0, 0, 0.6);
+  letter-spacing: 1px;
+  font-size: 15px;
+  line-height: 2;
+  margin-top: 17px;
+  margin-bottom: 14px;
+}
+#container div.right div.content > ul > li > ul > li > p {
+  font-size: 14px;
+  padding-left: 28px;
+  margin-top: 0;
+  margin-bottom: 3px;
+}
